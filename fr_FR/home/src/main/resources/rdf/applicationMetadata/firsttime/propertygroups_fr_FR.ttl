@@ -44,7 +44,7 @@ vivo:vitroPropertyGroupoutreach
   rdfs:label "Services"@fr-FR ;
 .
 vivo:vitroPropertyGroupoverview
-  rdfs:label "Aperçu"@fr-FR ;
+  rdfs:label "Présentation"@fr-FR ;
 .
 vivo:vitroPropertyGroupresearch
   rdfs:label "Recherche"@fr-FR ;
