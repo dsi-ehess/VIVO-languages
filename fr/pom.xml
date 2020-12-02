@@ -1,16 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.vivoweb</groupId>
-    <artifactId>vivo-languages</artifactId>
+    <artifactId>vivo-languages-fr</artifactId>
     <version>1.11.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>VIVO Languages</name>
-    <description>VIVO Languages</description>
+    <name>VIVO Languages fr</name>
+    <description>VIVO Languages for French</description>
     <url>http://vivoweb.org/</url>
-
+    <parent>
+        <groupId>org.vivoweb</groupId>
+        <artifactId>vivo-languages</artifactId>
+        <version>1.11.2-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
     <licenses>
         <license>
             <name>BSD 3-Clause License</name>
@@ -38,13 +44,17 @@
             <organization>Cornell University</organization>
             <organizationUrl>https://github.com/fereira</organizationUrl>
         </developer>
+        <developer>
+            <name>Michel Héon</name>
+            <email>heon.michel@uqam.ca</email>
+            <organization>Université du Québec à Montréal</organization>
+            <organizationUrl>https://github.com/uqam-sb</organizationUrl>
+        </developer>
     </developers>
 
-    <!--
-       The SCM repository location is used by Continuum to update against
-       when changes have occurred.  This spawns a new build cycle and releases
-       snapshots into the snapshot repository below.
-    -->
+    <!-- The SCM repository location is used by Continuum to update against 
+        when changes have occurred. This spawns a new build cycle and releases snapshots 
+        into the snapshot repository below. -->
     <scm>
         <connection>scm:git:git@github.com:vivo-project/VIVO-languages.git</connection>
         <developerConnection>scm:git:git@github.com:vivo-project/VIVO-languages.git</developerConnection>
@@ -62,6 +72,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <modules>
+        <module>home</module>
+        <module>webapp</module>
+    </modules>
 
     <profiles>
         <profile>
@@ -74,22 +88,11 @@
             </activation>
             <build>
                 <plugins>
-                    <!-- plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <quiet>true</quiet>
-                            <additionalparam>${javadoc.opts}</additionalparam>
-                        </configuration>
-                    </plugin -->
+                    <!-- plugin> <groupId>org.apache.maven.plugins</groupId> 
+                        <artifactId>maven-javadoc-plugin</artifactId> <executions> <execution> <id>attach-javadocs</id> 
+                        <goals> <goal>jar</goal> </goals> </execution> </executions> <configuration> 
+                        <quiet>true</quiet> <additionalparam>${javadoc.opts}</additionalparam> </configuration> 
+                        </plugin -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -158,7 +161,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile> 
+        </profile>
     </profiles>
 
     <build>
@@ -188,7 +191,7 @@
                     <version>3.1.0</version>
                 </plugin>
                 <plugin>
-					<groupId>org.apache.maven.plugins</groupId>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.2.3</version>
                 </plugin>
@@ -221,14 +224,4 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
-    <modules>
-    	<module>core</module>
-    	<module>en_CA</module>
-    	<module>en_US</module>
-    	<module>es</module>
-    	<module>fr_CA</module>
-    	<module>fr</module>
-    	<module>de_DE</module>
-    	<module>pt_BR</module>
-    </modules>
 </project>
